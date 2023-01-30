@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hugo Tours & Travel Agency</title>
+
+        <!-- CSS CDN Plugin files -->
+        <link href="./fonts/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet" />
+
+        <!-- CSS font google offline -->
+        <link rel="stylesheet" href="./fonts/Nunito-fonts.css" />
+
+        <!-- CSS CUSTOM -->
+        <link rel="stylesheet" href="./css/MY-CUSTOM.css" />
+    </head>
+    <body>
+        <header>
+            <div class="menubar"><i class="fas fa-bars" id="menu-bar"></i></div>
+
+            <a href="#" class="logo"><span>HG</span>Travel</a>
+
+            <nav class="navbar">
+                <a href="#home">Trang chủ</a>
+                <a href="#book">Đặt Tours</a>
+                <a href="#packages">Gói</a>
+                <a href="#service">Dịch vụ</a>
+                <a href="#gallery">Bộ sưu tập</a>
+                <a href="#review">Review</a>
+                <a href="#contact">Liên hệ</a>
+            </nav>
+
+            <div class="icons disb-hlight">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="user-btn"></i>
+            </div>
+
+            <form action="#" class="search-form" method="POST">
+                <input type="search" name="search" id="search-input" placeholder="Tìm kiếm.." autofocus />
+                <button type="submit" for="search-input" class="fas fa-search"></button>
+            </form>
+        </header>
+
+        <div class="login-container">
+            <h3>Login</h3>
+            <i class="fas fa-times" id="form-close-btn"></i>
+            <form action="#" class="login-form" method="POST">
+                <div class="form-group">
+                    <label class="fa-solid fa-envelope"></label>
+                    <input type="email" name="email" class="form-control" placeholder="nhập email.." />
+                </div>
+                <div class="form-group">
+                    <label class="fa-solid fa-key"></label>
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="mật khẩu.."
+                    />
+                    <i class="show-pass fa-solid fa-eye-slash" onclick="toggleShowPassword();"></i>
+                </div>
+
+                <!-- nút -->
+                <input type="submit" class="btn btn-login" value="đăng nhập" />
+
+                <div class="remember">
+                    <input type="checkbox" id="remember" />
+                    <label for="remember">Remember me</label>
+                </div>
+                <p>Quên nhớ mật khẩu ? <a href="#">vào đây.</a></p>
+                <p>Bạn chưa có tài khoản, <a href="#">tạo ngay.</a></p>
+            </form>
+        </div>
+
+        <!-- === MAIN CONTENTS === -->
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Những cuộc phiêu lưu đáng giá</h3>
+                <p>Khám phá những địa điểm mới cùng chúng tôi, những cuộc phiêu lưu hấp dẫn đang chờ bạn</p>
+                <a href="#" class="btn btn-home">Khám phá thêm</a>
+
+                <!-- nút video -->
+                <div class="controls disb-hlight">
+                    <span class="video-btn active" data-src="./videos/video1.mp4"></span>
+                    <span class="video-btn" data-src="./videos/video2.mp4"></span>
+                    <span class="video-btn" data-src="./videos/video3.mp4"></span>
+                    <span class="video-btn" data-src="./videos/video4.mp4"></span>
+                    <span class="video-btn" data-src="./videos/video5.mp4"></span>
+                    <span class="video-btn" data-src="./videos/video6.mp4"></span>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <video src="./videos/video1.mp4" id="video-slider" loop autoplay muted></video>
+            </div>
+        </section>
+
+        <!-- === END MAIN CONTENTS === -->
+
+        <!-- ================================================ -->
+        <!-- JS CUSTOM file -->
+        <script src="./js/MY-CUSTOM.js"></script>
+    </body>
+</html>
