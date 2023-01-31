@@ -1,3 +1,5 @@
+/*  CSS font google offline */
+@import url('./../fonts/Nunito-fonts.css');
 *,
 *::before,
 *::after {
@@ -41,11 +43,14 @@ a {
 ------------------------*/
 :root {
     --orange: #ffc300;
+    --orange: #ffc44d;
+    --black: #130f40;
+    --light-color: #515151;
 
-    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
 
-    --gap-spacing: 2rem; /* khoảng giữa các box, card */
+    --gap-spacing: 3rem; /* khoảng giữa các box, card */
     --outline-spacing: 6rem; /* khoảng cách giữa viền ngoài cùng và container */
 }
 
@@ -61,7 +66,6 @@ body {
     min-height: 100vh;
     font-size: 1.6rem;
     color: rgb(22, 22, 22);
-    background-color: #eee;
     /* background: linear-gradient(50deg, var(--color-gradient-a), var(--color-gradient-b)); */
     opacity: 1;
 }
@@ -72,9 +76,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
     background-color: #fff;
     color: var(--black);
@@ -83,9 +87,15 @@ body {
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #fae5d3;
-    color: #566573;
+    background-color: #fae5d3 !important;
+    background-color: #ffe3ad !important;
+    color: var(--black);
     border: var(--border);
+}
+.btn-book-now {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    background-color: var(--orange);
 }
 
 /* Tắt bôi đen */
@@ -107,7 +117,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 1rem 7%;
+    padding: 1.5rem 7%;
     background-color: #333;
     z-index: 999;
 
@@ -339,12 +349,28 @@ section {
     padding: 2rem 0;
 }
 .container {
-    background-color: #fae5d3;
+    /* background-color: #fae5d3; */
     display: flex;
     flex-wrap: wrap;
     padding: 0 var(--outline-spacing);
     padding-bottom: 0rem;
     margin-left: calc(-1 * var(--gap-spacing)); /* dịch sang trái: -2rem */
+}
+.heading-title {
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--black);
+}
+.heading-title span {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: var(--orange);
+    border-radius: 0.5rem;
+    padding: 0.2rem 1rem;
+}
+.heading-title span.space {
+    background-color: initial;
 }
 
 /*--------------------
@@ -383,7 +409,7 @@ section {
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 .btn-home {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     width: 20rem;
     background-color: var(--orange);
 }
@@ -392,14 +418,17 @@ section {
 .home .controls {
     position: relative;
     top: 5rem;
-    padding: 0.4rem;
+    padding: 1rem;
     border-radius: 5rem;
     background-color: rgba(23, 32, 42, 0.7);
+
+    display: flex;
+    align-items: center;
 }
 .home .controls .video-btn {
     display: inline-block;
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2rem;
+    height: 2rem;
     margin: 0 0.5rem;
     border-radius: 50%;
     background-color: #fff;
@@ -419,6 +448,133 @@ section {
     z-index: -1;
 }
 
+/*---------------------------
+    TRANG ĐẶT TOURS - BOOK
+----------------------------*/
+.book .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+}
+.book .container .image,
+.book .container .form-book-tour {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book .container .image img {
+    width: 100%;
+    object-fit: cover;
+}
+.book .container .form-book-tour form {
+    width: 50rem;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+.form-book-tour form h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: var(--light-color);
+}
+.form-book-tour form .form-control {
+    width: 100%;
+    padding: 1rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    text-transform: none;
+    color: #333;
+}
+
+/*---------------------------
+    TRANG ĐẶT TOURS - BOOK
+----------------------------*/
+.packages .container {
+    padding: 2rem var(--outline-spacing);
+}
+.packages .container .box {
+    display: flex;
+    flex-direction: column;
+
+    --column-features: 3;
+    width: calc(calc(100% / var(--column-features)) - var(--gap-spacing)); /* 4 card 1 hàng trừ cho 2rem grid */
+    margin-left: var(--gap-spacing);
+    margin-bottom: var(--gap-spacing);
+
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+.packages .container .box img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.packages .container .box .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    padding: 1rem 2rem;
+}
+.packages .box .content h3 {
+    position: relative;
+    font-size: 2rem;
+    color: var(--black);
+    display: inline-block;
+    padding-left: 2.5rem;
+
+    word-break: break-word; /* fix lỗi liền từ */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* hiển thị tiêu đề ko quá 2 hàng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.packages .box .content h3 i {
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+    color: var(--orange);
+    margin-right: 1rem;
+}
+.packages .box .content p {
+    margin-top: auto;
+    color: var(--light-color);
+
+    word-break: break-word; /* fix lỗi liền từ */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* hiển thị tiêu đề ko quá 3 hàng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.packages .box .content .stars {
+    color: var(--orange);
+    margin-top: auto;
+}
+.packages .box .content .price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    color: var(--light-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.packages .box .content .price s {
+    font-size: 1.5rem;
+}
+
 /* ====================================================================================== */
 /*--------------------------------
     RESPONSIVE IPAD MAX 1200px
@@ -435,7 +591,7 @@ section {
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 860px) {
     header .navbar {
         position: absolute;
         top: 100%;
@@ -453,12 +609,28 @@ section {
     header .search-form {
         padding: 1rem 2rem;
     }
+
+    /* Trang đặt tour - BOOK */
+    .book .container .image,
+    .book .container .form-book-tour {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* Trang Gói - Packages */
+    .packages .container .box {
+        --column-features: 2;
+    }
 }
 
 /*---------------------------
     RESPONSIVE ĐIỆN THOẠI
 ----------------------------*/
 @media (max-width: 660px) {
+    :root {
+        --outline-spacing: 1rem; /* khoảng cách giữa viền ngoài cùng và container */
+    }
+
     /* Nút MenuBar */
     .menubar {
         display: initial; /* đưa về mặc định ~ unset */
@@ -490,8 +662,18 @@ section {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     html {
         font-size: 50%;
+    }
+
+    /* tiêu đề */
+    .heading-title {
+        font-size: 2rem;
+    }
+
+    /* Trang Gói - Packages */
+    .packages .container .box {
+        --column-features: 1;
     }
 }
