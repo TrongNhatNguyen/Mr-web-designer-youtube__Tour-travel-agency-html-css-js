@@ -51,7 +51,7 @@ a {
     --border: 0.2rem solid rgba(0, 0, 0, 0.1);
 
     --gap-spacing: 3rem; /* khoảng giữa các box, card */
-    --outline-spacing: 6rem; /* khoảng cách giữa viền ngoài cùng và container */
+    --outline-spacing: 6%; /* khoảng cách giữa viền ngoài cùng và container áp dụng width > 1200px */
 }
 
 html {
@@ -367,7 +367,8 @@ section {
     background-color: rgba(255, 165, 0, 0.2);
     color: var(--orange);
     border-radius: 0.5rem;
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: -0.3rem;
 }
 .heading-title span.space {
     background-color: initial;
@@ -494,9 +495,9 @@ section {
     color: #333;
 }
 
-/*---------------------------
-    TRANG ĐẶT TOURS - BOOK
-----------------------------*/
+/*--------------------------------
+    TRANG GÓI HẤP DẪN - PACKAGES
+---------------------------------*/
 .packages .container {
     padding: 2rem var(--outline-spacing);
 }
@@ -513,10 +514,15 @@ section {
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow);
 }
+.packages .container .box:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
 .packages .container .box img {
     width: 100%;
     height: 25rem;
     object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 .packages .container .box .content {
@@ -575,11 +581,118 @@ section {
     font-size: 1.5rem;
 }
 
+/*---------------------------
+    TRANG DỊCH VỤ - SERVICE
+----------------------------*/
+.services .container {
+    padding: 2rem var(--outline-spacing);
+    margin-left: unset;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.services .container .box {
+    flex: 1 1 30rem;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+}
+.services .container .box:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.services .container .box i {
+    padding: 1rem;
+    font-size: 4rem;
+    color: var(--orange);
+}
+.services .container .box h3 {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+.services .container .box p {
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+
+/*-------------------------------
+    TRANG BỘ SƯU TẬP - GALLERY
+--------------------------------*/
+.gallery .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.gallery .container .box {
+    position: relative;
+    flex: 1 1 30rem;
+
+    height: 25rem;
+    overflow: hidden;
+    border: 1rem solid #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+}
+.gallery .container .box:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+.gallery .container .box:hover .content {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.gallery .container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery .box .content {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    text-align: center;
+
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery .box .content h3 {
+    font-size: 2.4rem;
+    color: var(--orange);
+}
+.gallery .box .content p {
+    font-size: 1.7rem;
+    color: #eee;
+
+    word-break: break-word; /* fix lỗi liền từ */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* hiển thị tiêu đề ko quá 3 hàng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gallery .box .content .btn-see-more {
+    width: 15rem;
+    padding: 1rem;
+    background-color: var(--orange);
+}
+
 /* ====================================================================================== */
 /*--------------------------------
     RESPONSIVE IPAD MAX 1200px
 ---------------------------------*/
 @media (max-width: 1200px) {
+    :root {
+        --outline-spacing: 6rem;
+    }
     html {
         font-size: 55%;
     }
@@ -628,7 +741,7 @@ section {
 ----------------------------*/
 @media (max-width: 660px) {
     :root {
-        --outline-spacing: 1rem; /* khoảng cách giữa viền ngoài cùng và container */
+        --outline-spacing: 2rem;
     }
 
     /* Nút MenuBar */
