@@ -685,6 +685,48 @@ section {
     background-color: var(--orange);
 }
 
+/*-------------------------------
+    TRANG ĐÁNH GIÁ - REVIEW
+--------------------------------*/
+.review .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+}
+.review .container .review-slider {
+    padding: 1rem 0;
+}
+.review .container .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.review .container .box:hover {
+    box-shadow: var(--box-shadow);
+}
+.review .container .box img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+.review .container .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.review .container .box p {
+    font-size: 1.8rem;
+    color: var(--light-color);
+}
+.review .container .box .stars {
+    color: var(--orange);
+}
+
 /* ====================================================================================== */
 /*--------------------------------
     RESPONSIVE IPAD MAX 1200px
