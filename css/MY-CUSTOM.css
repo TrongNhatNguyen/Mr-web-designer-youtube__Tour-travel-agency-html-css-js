@@ -91,7 +91,10 @@ body {
     background-color: #ffe3ad !important;
     color: var(--black);
     border: var(--border);
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
 }
+
 .btn-book-now {
     margin-top: 1rem;
     font-size: 1.7rem;
@@ -727,6 +730,82 @@ section {
     color: var(--orange);
 }
 
+/*-------------------------------
+    TRANG LIÊN HỆ - CONTACT
+--------------------------------*/
+.contact .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+}
+.contact .container .image,
+.contact .container .form-contact {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact .container .image img {
+    width: 100%;
+    object-fit: cover;
+}
+/* form */
+.contact .container .form-contact form {
+    width: 80rem;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+.contact form .form-group {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 50%;
+    gap: 1rem;
+}
+.contact form .form-group .form-control {
+    width: 100%;
+    padding: 1rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    text-transform: none;
+    color: #333;
+}
+.contact form .form-group textarea {
+    width: 100% !important;
+    height: 15rem;
+    font-family: 'Nunito', sans-serif;
+}
+.contact form .btn-contact {
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--orange);
+    font-size: 1.8rem;
+}
+
+/*-------------------------------
+    TRANG THƯƠNG HIỆU - BRAND
+--------------------------------*/
+.brand .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+}
+.brand .container .box {
+    display: flex;
+    justify-content: center;
+}
+.brand .container .box img {
+    width: 15rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 /* ====================================================================================== */
 /*--------------------------------
     RESPONSIVE IPAD MAX 1200px
@@ -772,9 +851,16 @@ section {
         max-width: 100%;
     }
 
-    /* Trang Gói - Packages */
+    /* Trang Gói - PACKAGES */
     .packages .container .box {
         --column-features: 2;
+    }
+
+    /* Trang Liên hệ - CONTACT */
+    .contact .container .image,
+    .contact .container .form-contact {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
@@ -827,8 +913,16 @@ section {
         font-size: 2rem;
     }
 
-    /* Trang Gói - Packages */
+    /* Trang Gói - PACKAGES */
     .packages .container .box {
         --column-features: 1;
+    }
+
+    /* Trang Liên hệ - CONTACT */
+    .contact form .form-group {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        gap: 1rem;
     }
 }

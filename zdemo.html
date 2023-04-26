@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .my-button {
+                background-color: #ffc107;
+                color: #fff;
+                border: none;
+                border-radius: 50px;
+                padding: 12px 24px;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .my-button::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.2);
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .my-button:hover {
+                background-color: #ff9800;
+            }
+
+            .my-button:hover::before {
+                width: 200%;
+                height: 200%;
+                opacity: 1;
+            }
+
+            .my-button:focus {
+                outline: none;
+            }
+
+            .my-button:active {
+                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <button class="my-button">Click Me</button>
+    </body>
+</html>
