@@ -806,6 +806,102 @@ section {
     flex-shrink: 0;
 }
 
+/*--------------------------------
+    TRANG CUỐI - FOOTER
+---------------------------------*/
+.footer {
+    clear: both;
+    background-color: #333;
+    color: #eee;
+}
+.footer .container {
+    padding: 2rem var(--outline-spacing);
+    margin-left: unset;
+
+    display: grid;
+    /* chiều rộng của các cột: đơn vị là fr (4 giá trị = 4 box) */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* chiều cao của các hàng */
+    grid-template-rows: auto;
+    /* khoảng cách giữa các box */
+    grid-gap: var(--gap-spacing);
+}
+.footer .container .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+.footer .box .share {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 1rem 0;
+}
+.footer .box .share a {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: var(--black);
+    background-color: #eee;
+    margin-right: 2rem;
+    font-size: 3rem;
+}
+.footer .box .share a:hover {
+    color: var(--orange);
+}
+
+/* links */
+.footer .box .links {
+    color: #eee;
+    text-transform: none;
+}
+.footer .box .links i {
+    color: var(--orange);
+    padding-right: 1rem;
+    transition: all 0.2s linear;
+}
+.footer .box .links:hover i {
+    padding-right: 1.5rem;
+}
+
+/* form subcribe */
+.footer .form-subcribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+.footer .form-subcribe input.email {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    background-color: #eee;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+.footer .form-subcribe input.btn-subcribe {
+    font-size: 1rem;
+    border: var(--border);
+    padding: 0.7rem 1.5rem;
+}
+
+/* giới thiệu cuối - CREDITS */
+.footer .credits {
+    padding: 1rem;
+    text-align: center;
+    background-color: #666;
+}
+.footer .credits span {
+    color: var(--orange);
+    font-weight: bold;
+}
+
 /* ====================================================================================== */
 /*--------------------------------
     RESPONSIVE IPAD MAX 1200px
